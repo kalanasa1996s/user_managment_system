@@ -1,3 +1,4 @@
+<?php //session_start(); ?>
 <?php require_once('inc/database.php') ?>
 <?php require_once('sql/sql.php') ?>
 

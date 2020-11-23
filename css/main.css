@@ -1,0 +1,17 @@
+*{
+   margin: 0;
+}
+
+header{
+    background: #eee;
+    overflow: auto;
+    padding: 20px;
+}
+
+header .appname{
+    float: left;
+}
+
+header .loggedin{
+    float: right;
+}

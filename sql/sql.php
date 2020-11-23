@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
 
 //check for from submission
@@ -36,7 +38,14 @@ if (isset($_POST['submit'])){
         if ($result_set){
             //Query sucessfull
             if (mysqli_num_rows($result_set)==1){
+
+
                 // Valid User Found
+                $user = mysqli_fetch_assoc($result_set);
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['first_name'] = $user['first_name'];
+
+
                 // redirect to users.php
                 header('Location:main/users.php');
 
