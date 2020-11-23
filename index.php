@@ -44,6 +44,15 @@
 
                 ?>
 
+                <?php
+
+                    if (isset($_GET['logout'])){
+                        echo ' <p class="alert alert-success" role="alert"">You have Sucessfully Loge Out the System</p>' ;
+                    }
+
+
+                ?>
+
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username:</label>

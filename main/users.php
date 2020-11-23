@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once ('../inc/database.php'); ?>
+
 <?php
     //Checking session incloud page  if a user is logged in
     if (!isset($_SESSION['user_id'])){
