@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab35017-c98d-48ae-ba40-6fb89b78edf3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2bd877fc-2eae-4d37-bb85-5f8b8936ca7e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2bd877fc-2eae-4d37-bb85-5f8b8936ca7e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/users.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,6 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ums2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
@@ -79,7 +79,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606049412185</updated>
       <workItem from="1606049415317" duration="13113000" />
-      <workItem from="1606103232240" duration="9786000" />
+      <workItem from="1606103232240" duration="11118000" />
+      <workItem from="1606191027892" duration="10702000" />
     </task>
     <task id="LOCAL-00001" summary="Saving Logged In User">
       <created>1606107765058</created>
@@ -88,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606107765058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Logout Process">
+      <created>1606120250599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606120250599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +107,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -107,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Saving Logged In User" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving Logged In User" />
+    <MESSAGE value="Logout Process" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout Process" />
   </component>
 </project>
