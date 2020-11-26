@@ -42,7 +42,9 @@
             <div class="col-md-2"></div>
 
             <div class="col-md-8">
-                <button type="button" class="btn btn-primary">Add New + </button>
+<!--                <button type="button" class="btn btn-primary">Add New + </button>-->
+
+                <a class="btn btn-primary" href="add-user.php">Add New + </a>
                 <br>
                 <br>
                 <table class="table">

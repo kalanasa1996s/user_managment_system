@@ -45,6 +45,18 @@ if (isset($_POST['submit'])){
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['first_name'] = $user['first_name'];
 
+                //lession 7 updateing last Login
+                $query = "UPDATE user SET last_login = NOW() ";
+                $query .="WHERE id = {$_SESSION['user_id']} LIMIT 1 ";
+
+//                or $query = "UPDATE user SET last_login = NOW() WHERE id = {$_SESSION['user_id']} LIMIT 1"; Use krnna puluwan
+
+                $result_set = mysqli_query($connection,$query);
+
+                if (!$result_set){
+                    die("db query failed");
+                }
+
 
                 // redirect to users.php
                 header('Location:main/users.php');
