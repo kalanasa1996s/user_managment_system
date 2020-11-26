@@ -49,8 +49,18 @@ if (isset($_POST['submit'])) {
     if (!is_email($_POST['email'])){
         $errors [] = 'Email adddress is invalid';
     }
+// checking if emali address already exists
 
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $query = "SELECT * FROM user WHERE email = '{$email}' LIMIT 1";
 
+    $result_set = mysqli_query($connection,$query);
+    if ($result_set){
+        if (mysqli_num_rows($result_set)==1){
+            $errors[] ='Email Address already Exists ';
+            
+        }
+    }
 //        //Checking Required Fields me tika uda widiyata tani ekkin  penna puluwan
 //        if (empty (trim($_POST['first_name']))){
 //            $errors[] = 'First Name is Required';
