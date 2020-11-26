@@ -1,11 +1,11 @@
 <?php session_start(); ?>
 <?php require_once('../inc/database.php'); ?>
-<?php require_once ('../inc/functions.php')?>
+<?php require_once('../inc/functions.php') ?>
 <?php //require_once ('../sql/user_list.php') ?>
 
 <?php
 //Checking session incloud page  if a user is logged in
-if (!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user_id'])) {
     header('Location: ../index.php');
 }
 ?>
@@ -13,19 +13,43 @@ if (!isset($_SESSION['user_id'])){
 
 <?php
 
-    $errors = array();
+$errors = array();
 
-    if (isset($_POST['submit'])){
+$first_name='';
+$last_name='';
+$email='';
+$password='';
 
-        $req_field = array('first_name','last_name','email','password');
+if (isset($_POST['submit'])) {
 
-        //        //Checking Required Fields
-        foreach ($req_field as $field){
-            if (empty (trim($_POST[$field]))){
-                $errors[] = $field.'  is Required';
-            }
 
+    $first_name=$_POST['first_name'];
+     $last_name=$_POST['last_name'];
+     $email=$_POST['email'];
+     $password=$_POST['password'];
+
+
+    //        //Checking Required Fields
+    $req_field = array('first_name', 'last_name', 'email', 'password');
+    foreach ($req_field as $field) {
+        if (empty (trim($_POST[$field]))) {
+            $errors[] = $field . '  is Required';
         }
+    }
+
+        // checking max length
+        $max_len_field = array('first_name' => 50 , 'last_name' =>100, 'email' =>100, 'password' =>40);
+        foreach ($max_len_field as  $field => $max_len) {
+            if (strlen(trim($_POST[$field])) > $max_len) {
+                $errors[] = $field . ' must be less than' . $max_len.'caracters';
+            }
+        }
+
+    //checking email address
+    if (!is_email($_POST['email'])){
+        $errors [] = 'Email adddress is invalid';
+    }
+
 
 //        //Checking Required Fields me tika uda widiyata tani ekkin  penna puluwan
 //        if (empty (trim($_POST['first_name']))){
@@ -42,9 +66,7 @@ if (!isset($_SESSION['user_id'])){
 //        }
 
 
-
-    }
-
+}
 
 
 ?>
@@ -87,11 +109,11 @@ if (!isset($_SESSION['user_id'])){
 
                 <?php
 
-                if (!empty($errors)){
+                if (!empty($errors)) {
                     echo '<div class = "errmsg">';
                     echo '<b>There were error(s) on Your Form.</b>';
                     echo '<br>';
-                    foreach ($errors as $error){
+                    foreach ($errors as $error) {
                         echo $error . '<br>';
                     }
                     echo '</div>';
@@ -106,22 +128,22 @@ if (!isset($_SESSION['user_id'])){
 
                     <p>
                         <label for="">First name</label>
-                        <input class="form-control" type="text" placeholder="First Name" name="first_name" >
+                        <input class="form-control" type="text" placeholder="First Name" name="first_name" <?php echo 'value =" ' . $first_name . '"'; ?>>
                     </p>
 
                     <p>
                         <label for="">Last name</label>
-                        <input class="form-control" type="text" placeholder="Last Name" name="last_name" >
+                        <input class="form-control" type="text" placeholder="Last Name" name="last_name" <?php echo 'value ="'. $last_name.'"'; ?>>
                     </p>
 
                     <p>
                         <label for="">Emali Address</label>
-                        <input class="form-control" type="email" placeholder="Email" name="email" >
+                        <input class="form-control" type="text" placeholder="Email" name="email" <?php echo 'value ="' . $email . '"';?>>
                     </p>
 
                     <p>
                         <label for="">New Password</label>
-                        <input class="form-control" type="password" placeholder="New Password" name="password" >
+                        <input class="form-control" type="password" placeholder="New Password" name="password">
                     </p>
 
                     <p>
