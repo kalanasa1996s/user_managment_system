@@ -1,12 +1,50 @@
 <?php session_start(); ?>
 <?php require_once('../inc/database.php'); ?>
+<?php require_once ('../inc/functions.php')?>
 <?php //require_once ('../sql/user_list.php') ?>
 
 <?php
-////Checking session incloud page  if a user is logged in
-//if (!isset($_SESSION['user_id'])){
-//    header('Location: ../index.php');
-//}
+//Checking session incloud page  if a user is logged in
+if (!isset($_SESSION['user_id'])){
+    header('Location: ../index.php');
+}
+?>
+
+
+<?php
+
+    $errors = array();
+
+    if (isset($_POST['submit'])){
+
+        $req_field = array('first_name','last_name','email','password');
+
+        //        //Checking Required Fields
+        foreach ($req_field as $field){
+            if (empty (trim($_POST[$field]))){
+                $errors[] = $field.'  is Required';
+            }
+
+        }
+
+//        //Checking Required Fields me tika uda widiyata tani ekkin  penna puluwan
+//        if (empty (trim($_POST['first_name']))){
+//            $errors[] = 'First Name is Required';
+//        }
+//        if (empty (trim($_POST['last_name']))){
+//            $errors[] = 'Last Name is Required';
+//        }
+//        if (empty (trim($_POST['email']))){
+//            $errors[] = 'Email is Required';
+//        }
+//        if (empty (trim($_POST['password']))){
+//            $errors[] = 'Password is Required';
+//        }
+
+
+
+    }
+
 
 
 ?>
@@ -47,31 +85,48 @@
                 <br>
                 <br>
 
-                <form action="add-user.php" class="userform">
+                <?php
+
+                if (!empty($errors)){
+                    echo '<div class = "errmsg">';
+                    echo '<b>There were error(s) on Your Form.</b>';
+                    echo '<br>';
+                    foreach ($errors as $error){
+                        echo $error . '<br>';
+                    }
+                    echo '</div>';
+                    echo '<br>';
+                }
+
+
+                ?>
+
+
+                <form action="add-user.php" method="post" class="userform">
 
                     <p>
                         <label for="">First name</label>
-                        <input class="form-control" type="text" placeholder="First Name" name="first_name" required>
+                        <input class="form-control" type="text" placeholder="First Name" name="first_name" >
                     </p>
 
                     <p>
                         <label for="">Last name</label>
-                        <input class="form-control" type="text" placeholder="Last Name" name="last_name" required>
+                        <input class="form-control" type="text" placeholder="Last Name" name="last_name" >
                     </p>
 
                     <p>
                         <label for="">Emali Address</label>
-                        <input class="form-control" type="email" placeholder="Email" name="email" required>
+                        <input class="form-control" type="email" placeholder="Email" name="email" >
                     </p>
 
                     <p>
                         <label for="">New Password</label>
-                        <input class="form-control" type="password" placeholder="New Password" name="password" required>
+                        <input class="form-control" type="password" placeholder="New Password" name="password" >
                     </p>
 
                     <p>
                         <label for=""></label>
-                        <button type="submit" class="btn btn-success" name="submit">Success</button>
+                        <button type="submit" class="btn btn-success" name="submit">Save</button>
                     </p>
 
                 </form>

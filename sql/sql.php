@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 
+
 <?php
 
 //check for from submission
@@ -35,6 +36,8 @@ if (isset($_POST['submit'])){
         $query ="SELECT * FROM user  WHERE email ='{$email}' AND password = '{$hashed_password}' LIMIT 1";
 
         $result_set = mysqli_query($connection,$query);
+
+
         if ($result_set){
             //Query sucessfull
             if (mysqli_num_rows($result_set)==1){
