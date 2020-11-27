@@ -31,19 +31,24 @@ if (isset($_POST['submit'])) {
 
     //        //Checking Required Fields
     $req_field = array('first_name', 'last_name', 'email', 'password');
-    foreach ($req_field as $field) {
-        if (empty (trim($_POST[$field]))) {
-            $errors[] = $field . '  is Required';
-        }
-    }
+
+    $errors = array_merge($errors,check_req_fields($req_field) );
+
+//    foreach ($req_field as $field) {
+//        if (empty (trim($_POST[$field]))) {
+//            $errors[] = $field . '  is Required';
+//        }
+//    }
 
         // checking max length
         $max_len_field = array('first_name' => 50 , 'last_name' =>100, 'email' =>100, 'password' =>40);
-        foreach ($max_len_field as  $field => $max_len) {
-            if (strlen(trim($_POST[$field])) > $max_len) {
-                $errors[] = $field . ' must be less than' . $max_len.'caracters';
-            }
-        }
+
+    $errors = array_merge($errors,check_max_length($max_len_field) );
+//        foreach ($max_len_field as  $field => $max_len) {
+//            if (strlen(trim($_POST[$field])) > $max_len) {
+//                $errors[] = $field . ' must be less than' . $max_len.'caracters';
+//            }
+//        }
 
     //checking email address
     if (!is_email($_POST['email'])){
@@ -142,14 +147,15 @@ if (isset($_POST['submit'])) {
                 <?php
 
                 if (!empty($errors)) {
-                    echo '<div class = "errmsg">';
-                    echo '<b>There were error(s) on Your Form.</b>';
-                    echo '<br>';
-                    foreach ($errors as $error) {
-                        echo $error . '<br>';
-                    }
-                    echo '</div>';
-                    echo '<br>';
+//                    echo '<div class = "errmsg">';
+//                    echo '<b>There were error(s) on Your Form.</b>';
+//                    echo '<br>';
+//                    foreach ($errors as $error) {
+//                        echo $error . '<br>';
+//                    }
+//                    echo '</div>';
+//                    echo '<br>';
+                    display_errors($errors);
                 }
 
 

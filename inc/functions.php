@@ -19,5 +19,41 @@ function is_email($email)
 }
 
 
+function check_req_fields($req_field){
+    //Checks Required Fields
+    $errors = array();
+    foreach ($req_field as $field) {
+        if (empty (trim($_POST[$field]))) {
+            $errors[] = $field . '  is Required';
+        }
+    }
+    return $errors;
+}
+
+function check_max_length($max_len_field){
+    //Checks Required Fields
+    $errors = array();
+    foreach ($max_len_field as  $field => $max_len) {
+        if (strlen(trim($_POST[$field])) > $max_len) {
+            $errors[] = $field . ' must be less than' . $max_len.'caracters';
+        }
+    }
+    return $errors;
+}
+
+
+function display_errors($errors){
+    //Form Errors
+    echo '<div class = "errmsg" style="color: red">';
+    echo '<b>There were error(s) on Your Form.</b>';
+    echo '<br>';
+    foreach ($errors as $error) {
+        $error = ucfirst(str_replace("_", " ",$error));
+        echo $error . '<br>';
+    }
+    echo '</div>';
+    echo '<br>';
+}
+
 ?>
 
