@@ -60,6 +60,8 @@ if (isset($_POST['submit'])) {
             $errors[] ='Email Address already Exists ';
 
         }
+
+
     }
 //        //Checking Required Fields me tika uda widiyata tani ekkin  penna puluwan
 //        if (empty (trim($_POST['first_name']))){
@@ -75,6 +77,26 @@ if (isset($_POST['submit'])) {
 //            $errors[] = 'Password is Required';
 //        }
 
+    if (empty($errors)){
+        // No Errors Found... Adding new Record
+        $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
+        $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
+        $password = mysqli_real_escape_string($connection, $_POST['password']);
+        //email address is already sanitized
+        $hashed_password = sha1($password);
+
+        $query = "INSERT INTO user (first_name, last_name, email, password, is_deleted) VALUES ('{$first_name}','{$last_name}','{$email}','{$hashed_password}',0)";
+        $result_set = mysqli_query($connection,$query);
+
+        if ($result_set){
+            //query sucessful .... redirecting to users page
+            header('Location: users.php?user_added=true');
+
+
+        }else{
+            $errors[]='Added Failed';
+        }
+    }
 
 }
 
