@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
     if ($result_set){
         if (mysqli_num_rows($result_set)==1){
             $errors[] ='Email Address already Exists ';
-            
+
         }
     }
 //        //Checking Required Fields me tika uda widiyata tani ekkin  penna puluwan
