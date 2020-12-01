@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0ab35017-c98d-48ae-ba40-6fb89b78edf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/delete-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/delete-user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql/sql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/user_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/sql/user_list.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,7 +91,7 @@
       <workItem from="1606379287731" duration="18912000" />
       <workItem from="1606472335361" duration="5881000" />
       <workItem from="1606656923184" duration="8774000" />
-      <workItem from="1606748493223" duration="2122000" />
+      <workItem from="1606748493223" duration="6256000" />
     </task>
     <task id="LOCAL-00001" summary="Saving Logged In User">
       <created>1606107765058</created>
@@ -183,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606748705509</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Delete User 2">
+      <created>1606750825727</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606750825727</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +223,7 @@
     <MESSAGE value="Retrive and Display" />
     <MESSAGE value="Change Password" />
     <MESSAGE value="Delete User" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete User" />
+    <MESSAGE value="Delete User 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete User 2" />
   </component>
 </project>

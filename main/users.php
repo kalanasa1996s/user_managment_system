@@ -47,6 +47,14 @@
                 <a class="btn btn-primary" href="add-user.php">Add New + </a>
                 <br>
                 <br>
+                <div>
+                    <form action="users.php" method="get" >
+                        <input type="text" name="search" required id="" placeholder="Type First Name | Last Name Or Email" autofocus class="form-control" value="<?php echo $search ?>">
+                    </form>
+                </div>
+
+                <br>
+                <br>
                 <table class="table">
                     <thead class="thead-light">
                     <tr>

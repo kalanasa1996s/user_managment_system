@@ -35,6 +35,7 @@ if (isset($_POST['submit'])){
 
         $query ="SELECT * FROM user  WHERE email ='{$email}' AND password = '{$hashed_password}' LIMIT 1";
 
+
         $result_set = mysqli_query($connection,$query);
 
 

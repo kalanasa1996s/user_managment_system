@@ -2,10 +2,20 @@
 
 
 <?php
+//getting the list of users
+
+        $search ='';
+
+if (isset($_GET['search'])){
+    $search = mysqli_real_escape_string($connection,$_GET['search']);
+    $query ="SELECT * FROM user WHERE (first_name LIKE '%{$search}%' OR last_name LIKE '%{$search}%' OR  email LIKE '%{$search}%')  AND is_deleted=0 ORDER BY id";
+}else{
+    $query ="SELECT * FROM user WHERE is_deleted = 0  ORDER BY  id";
+}
 
 $user_list ='';
-//getting the list of users
-$query ="SELECT * FROM user WHERE is_deleted = 0  ORDER BY  id";
+
+
 $users = mysqli_query($connection,$query);
 
 if ($users){
